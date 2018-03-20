@@ -22,6 +22,13 @@ extern "C" {
 /** Max number of characters in LPM name. */
 #define RTE_LPM6_NAMESIZE                 32
 
+/** Rules tbl entry structure. */
+struct rte_lpm6_rule {
+	uint8_t ip[RTE_LPM6_IPV6_ADDR_SIZE]; /**< Rule IP address. */
+	uint8_t next_hop; /**< Rule next hop. */
+	uint8_t depth; /**< Rule depth. */
+};
+
 /** LPM structure. */
 struct rte_lpm6;
 
@@ -31,6 +38,61 @@ struct rte_lpm6_config {
 	uint32_t number_tbl8s;   /**< Number of tbl8s to allocate. */
 	int flags;               /**< This field is currently unused. */
 };
+
+/** LPM6 iterator state structure. */
+struct rte_lpm6_iterator_state {
+	uint8_t  ip_masked[RTE_LPM6_IPV6_ADDR_SIZE];
+	uint8_t  depth;
+	uint32_t next;
+	const struct rte_lpm6 *lpm;
+};
+
+/**
+ * @warning
+ * @b EXPERIMENTAL: this API may change without prior notice
+ *
+ * Initialize the lpm iterator state.
+ *
+ * @param lpm
+ *   LPM object handle
+ * @param ip
+ *   IP of the rule to be searched
+ *   ip == NULL as having an all-zero IPv6 address
+ * @param depth
+ *   Initial depth of the rule to be searched.
+ *   Pass zero to enumerate the whole LPM table.
+ * @param state
+ *   Pointer to the iterator state
+ * @return
+ *   0 on successfully initialize the state variable, negative otherwise.
+ *   Possible error values include:
+ *   - EINVAL - invalid parameter passed to function
+ */
+__rte_experimental
+int rte_lpm6_iterator_state_init(const struct rte_lpm6 *lpm, uint8_t *ip,
+	uint8_t depth, struct rte_lpm6_iterator_state *state);
+
+/**
+ * @warning
+ * @b EXPERIMENTAL: this API may change without prior notice
+ *
+ * An iterator over its rule entries.
+ * The iterator should require a prefix as a parameter
+ * and should list all entries as long as the given prefix (or longer).
+ *
+ * @param state
+ *   Pointer to the LPM rule iterator state
+ * @param rule
+ *   Pointer to the next rule entry
+ * @return
+ *   0 on successfully searching the next rule entry, negative otherwise.
+ *   Possible error values include:
+ *   - EINVAL - invalid parameter passed to function
+ *   - ENOENT - no rule entries found
+ */
+__rte_experimental
+int rte_lpm6_rule_iterate(struct rte_lpm6_iterator_state *state,
+	struct rte_lpm6_rule *rule);
 
 /**
  * Create an LPM object.

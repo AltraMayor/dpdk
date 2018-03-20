@@ -26,4 +26,8 @@ EXPERIMENTAL {
 	global:
 
 	rte_lpm_rcu_qsbr_add;
+	rte_lpm_iterator_state_init;
+	rte_lpm_rule_iterate;
+	rte_lpm6_iterator_state_init;
+	rte_lpm6_rule_iterate;
 };

@@ -40,12 +40,6 @@ enum valid_flag {
 	VALID
 };
 
-/** @internal Rule structure. */
-struct rte_lpm_rule {
-	uint32_t ip; /**< Rule IP address. */
-	uint32_t next_hop; /**< Rule next hop. */
-};
-
 /** @internal Contains metadata about the rules table. */
 struct rte_lpm_rule_info {
 	uint32_t used_rules; /**< Used rules so far. */
@@ -116,6 +110,67 @@ depth_to_range(uint8_t depth)
 
 	/* Else if depth is greater than 24 */
 	return 1 << (RTE_LPM_MAX_DEPTH - depth);
+}
+
+int
+rte_lpm_iterator_state_init(const struct rte_lpm *lpm, uint32_t ip,
+	uint8_t depth, struct rte_lpm_iterator_state *state)
+{
+	if (lpm == NULL || depth > RTE_LPM_MAX_DEPTH || state == NULL)
+		return -EINVAL;
+
+	state->dmask = depth == 0 ? 0 : depth_to_mask(depth);
+	state->ip_masked = ip & state->dmask;
+	state->depth = depth == 0 ? 1 : depth;
+	state->next = 0;
+	state->lpm = lpm;
+
+	return 0;
+}
+
+/*
+ * An iterator over its rule entries.
+ */
+int
+rte_lpm_rule_iterate(struct rte_lpm_iterator_state *state,
+	const struct rte_lpm_rule **rule)
+{
+	struct __rte_lpm *i_lpm;
+
+	if (state == NULL || rule == NULL) {
+		if (rule != NULL)
+			*rule = NULL;
+
+		return -EINVAL;
+	}
+
+	i_lpm = container_of(state->lpm, struct __rte_lpm, lpm);
+
+	while (state->depth <= RTE_LPM_MAX_DEPTH) {
+		uint32_t rule_gindex =
+			i_lpm->rule_info[state->depth - 1].first_rule;
+		uint32_t last_rule = rule_gindex +
+			i_lpm->rule_info[state->depth - 1].used_rules;
+		uint32_t rule_index = rule_gindex + state->next;
+
+		while (rule_index < last_rule) {
+			if ((i_lpm->rules_tbl[rule_index].ip &
+					state->dmask) == state->ip_masked) {
+				state->next = rule_index - rule_gindex + 1;
+				*rule = (const struct rte_lpm_rule *)
+					&i_lpm->rules_tbl[rule_index];
+				return 0;
+			}
+
+			rule_index++;
+		}
+
+		state->depth++;
+		state->next = 0;
+	}
+
+	*rule = NULL;
+	return -ENOENT;
 }
 
 /*

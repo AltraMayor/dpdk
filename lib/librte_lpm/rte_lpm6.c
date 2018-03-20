@@ -70,13 +70,6 @@ struct rte_lpm6_tbl_entry {
 	uint32_t ext_entry :1;   /**< External entry. */
 };
 
-/** Rules tbl entry structure. */
-struct rte_lpm6_rule {
-	uint8_t ip[RTE_LPM6_IPV6_ADDR_SIZE]; /**< Rule IP address. */
-	uint32_t next_hop; /**< Rule next hop. */
-	uint8_t depth; /**< Rule depth. */
-};
-
 /** Rules tbl entry key. */
 struct rte_lpm6_rule_key {
 	uint8_t ip[RTE_LPM6_IPV6_ADDR_SIZE]; /**< Rule IP address. */
@@ -238,6 +231,65 @@ rebuild_lpm(struct rte_lpm6 *lpm)
 			(void **) &next_hop, &iter) >= 0)
 		rte_lpm6_add(lpm, rule_key->ip, rule_key->depth,
 			(uint32_t) next_hop);
+}
+
+int
+rte_lpm6_iterator_state_init(const struct rte_lpm6 *lpm, uint8_t *ip,
+	uint8_t depth, struct rte_lpm6_iterator_state *state)
+{
+	if (lpm == NULL || depth > RTE_LPM6_MAX_DEPTH || state == NULL)
+		return -EINVAL;
+
+	if (ip == NULL)
+		memset(state->ip_masked, 0, sizeof(state->ip_masked));
+	else {
+		ip6_copy_addr(state->ip_masked, ip);
+		ip6_mask_addr(state->ip_masked, depth);
+	}
+
+	state->depth = depth;
+	state->next = 0;
+	state->lpm = lpm;
+
+	return 0;
+}
+
+/*
+ * An iterator over its rule entries.
+ */
+int
+rte_lpm6_rule_iterate(struct rte_lpm6_iterator_state *state,
+	struct rte_lpm6_rule *rule)
+{
+	uint64_t next_hop;
+	struct rte_lpm6_rule_key *rule_key;
+
+	/* Check user arguments. */
+	if (state == NULL || rule == NULL)
+		return -EINVAL;
+
+	/* Scan rules hash table to find matched rules. */
+	while (rte_hash_iterate(state->lpm->rules_tbl, (void *) &rule_key,
+			(void **) &next_hop, &state->next) >= 0) {
+		uint8_t rule_ip_masked[RTE_LPM6_IPV6_ADDR_SIZE];
+
+		if (rule_key->depth < state->depth)
+			continue;
+
+		ip6_copy_addr(rule_ip_masked, rule_key->ip);
+		ip6_mask_addr(rule_ip_masked, state->depth);
+
+		/* If rule is found return the rule index. */
+		if ((memcmp(state->ip_masked, rule_ip_masked,
+				RTE_LPM6_IPV6_ADDR_SIZE) == 0)) {
+			rule->depth = rule_key->depth;
+			ip6_copy_addr(rule->ip, rule_key->ip);
+			rule->next_hop = next_hop;
+			return 0;
+		}
+	}
+
+	return -ENOENT;
 }
 
 /*
