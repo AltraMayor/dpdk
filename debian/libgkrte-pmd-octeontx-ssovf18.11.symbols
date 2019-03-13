@@ -1,0 +1,2 @@
+librte_pmd_octeontx_ssovf.so.18.11 libgkrte-pmd-octeontx-ssovf18.11 #MINVER#
+ DPDK_17.05@DPDK_17.05 18.11
