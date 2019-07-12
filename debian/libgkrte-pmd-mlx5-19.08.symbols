@@ -1,0 +1,2 @@
+librte_pmd_mlx5.so.19.08 libgkrte-pmd-mlx5-19.08 #MINVER#
+ DPDK_2.2@DPDK_2.2 19.08

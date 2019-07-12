@@ -1,0 +1,9 @@
+librte_pmd_dpaa2.so.19.08 libgkrte-pmd-dpaa2-19.08 #MINVER#
+ DPDK_17.05@DPDK_17.05 19.08
+ DPDK_17.11@DPDK_17.11 19.08
+ EXPERIMENTAL@EXPERIMENTAL 19.08
+ dpaa2_eth_eventq_attach@DPDK_17.11 19.08
+ dpaa2_eth_eventq_detach@DPDK_17.11 19.08
+ rte_pmd_dpaa2_mux_flow_create@EXPERIMENTAL 19.08
+ rte_pmd_dpaa2_set_custom_hash@EXPERIMENTAL 19.08
+ rte_pmd_dpaa2_set_timestamp@EXPERIMENTAL 19.08

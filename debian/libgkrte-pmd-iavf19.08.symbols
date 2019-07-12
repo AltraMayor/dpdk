@@ -1,0 +1,2 @@
+librte_pmd_iavf.so.19.08 libgkrte-pmd-iavf19.08 #MINVER#
+ DPDK_18.02@DPDK_18.02 19.08

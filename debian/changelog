@@ -1,5 +1,5 @@
-gatekeeper-dpdk (18.11.0-0~digirati0.18.04) bionic; urgency=medium
+gatekeeper-dpdk (19.08.0-0) bionic; urgency=medium
 
   * First build.
 
- -- Andre Nathan <andre@digirati.com.br>  Mon, 11 Mar 2019 15:13:57 -0300
+ -- Andre Nathan <andre@digirati.com.br>  Thu, 11 Jul 2019 16:28:16 -0300

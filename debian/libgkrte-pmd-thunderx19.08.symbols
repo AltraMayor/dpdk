@@ -1,0 +1,2 @@
+librte_pmd_thunderx.so.19.08 libgkrte-pmd-thunderx19.08 #MINVER#
+ DPDK_16.07@DPDK_16.07 19.08

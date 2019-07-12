@@ -1,0 +1,4 @@
+librte_mempool_dpaa.so.19.08 libgkrte-mempool-dpaa19.08 #MINVER#
+ DPDK_17.11@DPDK_17.11 19.08
+ rte_dpaa_bpid_info@DPDK_17.11 19.08
+ rte_dpaa_memsegs@DPDK_17.11 19.08

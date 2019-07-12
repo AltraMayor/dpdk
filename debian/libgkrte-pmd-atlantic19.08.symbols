@@ -1,0 +1,9 @@
+librte_pmd_atlantic.so.19.08 libgkrte-pmd-atlantic19.08 #MINVER#
+ DPDK_18.11@DPDK_18.11 19.08
+ EXPERIMENTAL@EXPERIMENTAL 19.08
+ rte_pmd_atl_macsec_config_rxsc@EXPERIMENTAL 19.08
+ rte_pmd_atl_macsec_config_txsc@EXPERIMENTAL 19.08
+ rte_pmd_atl_macsec_disable@EXPERIMENTAL 19.08
+ rte_pmd_atl_macsec_enable@EXPERIMENTAL 19.08
+ rte_pmd_atl_macsec_select_rxsa@EXPERIMENTAL 19.08
+ rte_pmd_atl_macsec_select_txsa@EXPERIMENTAL 19.08

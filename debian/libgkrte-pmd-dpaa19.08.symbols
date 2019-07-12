@@ -1,0 +1,6 @@
+librte_pmd_dpaa.so.19.08 libgkrte-pmd-dpaa19.08 #MINVER#
+ DPDK_17.11@DPDK_17.11 19.08
+ DPDK_18.08@DPDK_18.08 19.08
+ dpaa_eth_eventq_attach@DPDK_18.08 19.08
+ dpaa_eth_eventq_detach@DPDK_18.08 19.08
+ rte_pmd_dpaa_set_tx_loopback@DPDK_18.08 19.08

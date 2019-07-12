@@ -1,0 +1,6 @@
+librte_common_octeontx.so.19.08 libgkrte-common-octeontx19.08 #MINVER#
+ DPDK_18.05@DPDK_18.05 19.08
+ octeontx_logtype_mbox@Base 19.08
+ octeontx_mbox_send@DPDK_18.05 19.08
+ octeontx_mbox_set_ram_mbox_base@DPDK_18.05 19.08
+ octeontx_mbox_set_reg@DPDK_18.05 19.08

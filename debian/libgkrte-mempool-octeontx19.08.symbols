@@ -1,0 +1,2 @@
+librte_mempool_octeontx.so.19.08 libgkrte-mempool-octeontx19.08 #MINVER#
+ DPDK_17.11@DPDK_17.11 19.08

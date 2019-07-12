@@ -1,0 +1,2 @@
+librte_pmd_vdev_netvsc.so.19.08 libgkrte-pmd-vdev-netvsc19.08 #MINVER#
+ DPDK_18.02@DPDK_18.02 19.08

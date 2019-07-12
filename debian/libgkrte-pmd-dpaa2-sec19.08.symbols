@@ -1,0 +1,5 @@
+librte_pmd_dpaa2_sec.so.19.08 libgkrte-pmd-dpaa2-sec19.08 #MINVER#
+ DPDK_17.05@DPDK_17.05 19.08
+ DPDK_18.11@DPDK_18.11 19.08
+ dpaa2_sec_eventq_attach@DPDK_18.11 19.08
+ dpaa2_sec_eventq_detach@DPDK_18.11 19.08

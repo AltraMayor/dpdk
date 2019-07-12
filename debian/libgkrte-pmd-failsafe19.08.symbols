@@ -1,0 +1,2 @@
+librte_pmd_failsafe.so.19.08 libgkrte-pmd-failsafe19.08 #MINVER#
+ DPDK_17.08@DPDK_17.08 19.08

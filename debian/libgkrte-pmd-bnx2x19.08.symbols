@@ -1,0 +1,2 @@
+librte_pmd_bnx2x.so.19.08 libgkrte-pmd-bnx2x19.08 #MINVER#
+ DPDK_2.1@DPDK_2.1 19.08

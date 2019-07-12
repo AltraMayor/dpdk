@@ -1,0 +1,9 @@
+librte_kvargs.so.19.08 libgkrte-kvargs19.08 #MINVER#
+ DPDK_2.0@DPDK_2.0 19.08
+ EXPERIMENTAL@EXPERIMENTAL 19.08
+ rte_kvargs_count@DPDK_2.0 19.08
+ rte_kvargs_free@DPDK_2.0 19.08
+ rte_kvargs_parse@DPDK_2.0 19.08
+ rte_kvargs_parse_delim@EXPERIMENTAL 19.08
+ rte_kvargs_process@DPDK_2.0 19.08
+ rte_kvargs_strcmp@EXPERIMENTAL 19.08

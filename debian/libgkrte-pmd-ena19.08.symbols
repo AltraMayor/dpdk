@@ -1,0 +1,2 @@
+librte_pmd_ena.so.19.08 libgkrte-pmd-ena19.08 #MINVER#
+ DPDK_16.04@DPDK_16.04 19.08

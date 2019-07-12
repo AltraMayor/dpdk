@@ -1,0 +1,7 @@
+librte_mempool_dpaa2.so.19.08 libgkrte-mempool-dpaa2-19.08 #MINVER#
+ DPDK_17.05@DPDK_17.05 19.08
+ DPDK_18.05@DPDK_18.05 19.08
+ rte_dpaa2_bpid_info@DPDK_17.05 19.08
+ rte_dpaa2_mbuf_alloc_bulk@DPDK_17.05 19.08
+ rte_dpaa2_mbuf_from_buf_addr@DPDK_18.05 19.08
+ rte_dpaa2_mbuf_pool_bpid@DPDK_18.05 19.08

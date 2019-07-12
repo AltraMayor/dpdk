@@ -1,0 +1,6 @@
+librte_telemetry.so.19.08 libgkrte-telemetry19.08 #MINVER#
+ EXPERIMENTAL@EXPERIMENTAL 19.08
+ rte_telemetry_cleanup@EXPERIMENTAL 19.08
+ rte_telemetry_init@EXPERIMENTAL 19.08
+ rte_telemetry_parse@EXPERIMENTAL 19.08
+ rte_telemetry_selftest@EXPERIMENTAL 19.08

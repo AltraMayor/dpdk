@@ -1,0 +1,3 @@
+librte_gso.so.19.08 libgkrte-gso19.08 #MINVER#
+ DPDK_17.11@DPDK_17.11 19.08
+ rte_gso_segment@DPDK_17.11 19.08
