@@ -3,10 +3,10 @@ librte_security.so.19.08 libgkrte-security19.08 #MINVER#
  EXPERIMENTAL@EXPERIMENTAL 19.08
  rte_security_capabilities_get@DPDK_18.11 19.08
  rte_security_capability_get@DPDK_18.11 19.08
- rte_security_get_userdata@DPDK_18.11 19.08
+ rte_security_get_userdata@EXPERIMENTAL 19.08
  rte_security_session_create@DPDK_18.11 19.08
  rte_security_session_destroy@DPDK_18.11 19.08
  rte_security_session_get_size@DPDK_18.11 19.08
- rte_security_session_stats_get@DPDK_18.11 19.08
- rte_security_session_update@DPDK_18.11 19.08
+ rte_security_session_stats_get@EXPERIMENTAL 19.08
+ rte_security_session_update@EXPERIMENTAL 19.08
  rte_security_set_pkt_metadata@DPDK_18.11 19.08

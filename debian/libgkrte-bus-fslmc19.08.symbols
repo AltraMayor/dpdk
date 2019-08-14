@@ -6,6 +6,7 @@ librte_bus_fslmc.so.19.08 libgkrte-bus-fslmc19.08 #MINVER#
  DPDK_18.05@DPDK_18.05 19.08
  DPDK_18.11@DPDK_18.11 19.08
  DPDK_19.05@DPDK_19.05 19.08
+ EXPERIMENTAL@EXPERIMENTAL 19.08
  dpaa2_affine_qbman_ethrx_swp@DPDK_18.05 19.08
  dpaa2_affine_qbman_swp@DPDK_17.05 19.08
  dpaa2_alloc_dpbp_dev@DPDK_17.05 19.08
@@ -105,5 +106,6 @@ librte_bus_fslmc.so.19.08 libgkrte-bus-fslmc19.08 #MINVER#
  rte_fslmc_get_device_count@DPDK_18.02 19.08
  rte_fslmc_object_register@DPDK_17.08 19.08
  rte_fslmc_vfio_dmamap@DPDK_17.05 19.08
+ rte_fslmc_vfio_mem_dmamap@EXPERIMENTAL 19.08
  rte_global_active_dqs_list@DPDK_17.08 19.08
  rte_mcp_ptr_list@DPDK_17.05 19.08

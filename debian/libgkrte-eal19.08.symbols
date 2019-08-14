@@ -138,6 +138,7 @@ librte_eal.so.19.08 libgkrte-eal19.08 #MINVER#
  rte_hexdump@DPDK_2.0 19.08
  rte_hypervisor_get@DPDK_18.02 19.08
  rte_hypervisor_get_name@DPDK_18.02 19.08
+ rte_intr_ack@EXPERIMENTAL 19.08
  rte_intr_allow_others@DPDK_2.1 19.08
  rte_intr_callback_register@DPDK_2.0 19.08
  rte_intr_callback_unregister@DPDK_2.0 19.08

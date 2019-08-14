@@ -1,5 +1,7 @@
 librte_metrics.so.19.08 libgkrte-metrics19.08 #MINVER#
  DPDK_17.05@DPDK_17.05 19.08
+ EXPERIMENTAL@EXPERIMENTAL 19.08
+ rte_metrics_deinit@EXPERIMENTAL 19.08
  rte_metrics_get_names@DPDK_17.05 19.08
  rte_metrics_get_values@DPDK_17.05 19.08
  rte_metrics_init@DPDK_17.05 19.08

@@ -1,5 +1,6 @@
 usr/bin/dpdk-proc-info
 usr/bin/dpdk-pdump
+usr/bin/dpdk-test
 usr/bin/dpdk-test-bbdev
 usr/bin/dpdk-testpmd
 usr/bin/dpdk-test-compress-perf
