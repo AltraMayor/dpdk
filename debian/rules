@@ -151,10 +151,10 @@ override_dh_auto_install-arch:
 	done
 	# Package: gatekeeper-dpdk-igb-uio-dkms
 	dh_install -p gatekeeper-dpdk-igb-uio-dkms kernel/linux/igb_uio/* \
-		usr/src/dpdk-igb-uio-$(DEB_VERSION_UPSTREAM)
+		usr/src/gatekeeper-dpdk-igb-uio-$(DEB_VERSION_UPSTREAM)
 	# Package: gatekeeper-dpdk-rte-kni-dkms
 	dh_install -p gatekeeper-dpdk-rte-kni-dkms kernel/linux/kni/* \
-		usr/src/dpdk-rte-kni-$(DEB_VERSION_UPSTREAM)
+		usr/src/gatekeeper-dpdk-rte-kni-$(DEB_VERSION_UPSTREAM)
 ifneq (,$(KVERS))
 	# Package: gatekeeper-dpdk-modules-<kernel version>
 	dh_install -p gatekeeper-dpdk-modules-$(KVERS) lib/modules
