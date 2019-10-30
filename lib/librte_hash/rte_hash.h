@@ -725,6 +725,37 @@ rte_hash_iterate(const struct rte_hash *h, const void **key, void **data, uint32
 __rte_experimental
 int rte_hash_rcu_qsbr_add(struct rte_hash *h, struct rte_hash_rcu_config *cfg);
 
+/**
+ * @warning
+ * @b EXPERIMENTAL: this API may change without prior notice
+ *
+ * Prefetch the candidate buckets into all cache levels.
+ *
+ * @param h
+ *   Hash table to look in.
+ * @param sig
+ *   Precomputed hash values for the key to look for.
+ */
+__rte_experimental
+void
+rte_hash_prefetch_buckets(const struct rte_hash *h, hash_sig_t sig);
+
+/**
+ * @warning
+ * @b EXPERIMENTAL: this API may change without prior notice
+ *
+ * Prefetch the candidate buckets into all cache levels
+ * (non-temporal/transient version).
+ *
+ * @param h
+ *   Hash table to look in.
+ * @param sig
+ *   Precomputed hash values for the key to look for.
+ */
+__rte_experimental
+void
+rte_hash_prefetch_buckets_non_temporal(const struct rte_hash *h,
+	hash_sig_t sig);
 #ifdef __cplusplus
 }
 #endif

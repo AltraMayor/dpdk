@@ -2979,3 +2979,26 @@ extend_table:
 	(*next)++;
 	return position - 1;
 }
+
+void
+rte_hash_prefetch_buckets(const struct rte_hash *h, hash_sig_t sig)
+{
+	uint16_t short_sig = get_short_sig(sig);
+	uint32_t prim_index = get_prim_bucket_index(h, sig);
+	uint32_t sec_index = get_alt_bucket_index(h, prim_index, short_sig);
+
+	rte_prefetch0(&h->buckets[prim_index]);
+	rte_prefetch0(&h->buckets[sec_index]);
+}
+
+void
+rte_hash_prefetch_buckets_non_temporal(const struct rte_hash *h,
+	hash_sig_t sig)
+{
+	uint16_t short_sig = get_short_sig(sig);
+	uint32_t prim_index = get_prim_bucket_index(h, sig);
+	uint32_t sec_index = get_alt_bucket_index(h, prim_index, short_sig);
+
+	rte_prefetch_non_temporal(&h->buckets[prim_index]);
+	rte_prefetch_non_temporal(&h->buckets[sec_index]);
+}
