@@ -30,4 +30,7 @@ EXPERIMENTAL {
 	rte_lpm_rule_iterate;
 	rte_lpm6_iterator_state_init;
 	rte_lpm6_rule_iterate;
+	rte_lpm6_get_max_rules;
+	rte_lpm6_get_num_tbl8s;
+
 };

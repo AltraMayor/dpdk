@@ -95,6 +95,42 @@ int rte_lpm6_rule_iterate(struct rte_lpm6_iterator_state *state,
 	struct rte_lpm6_rule *rule);
 
 /**
+ * @warning
+ * @b EXPERIMENTAL: this API may change without prior notice
+ *
+ * Get the maximum number of rules.
+ *
+ * @param lpm
+ *   LPM object handle
+ * @return
+ *   0 or positive on successfully getting the number of rules,
+ *   negative otherwise.
+ *   Possible error values include:
+ *   - EINVAL - invalid parameter passed to function
+ */
+__rte_experimental
+int
+rte_lpm6_get_max_rules(const struct rte_lpm6 *lpm);
+
+/**
+ * @warning
+ * @b EXPERIMENTAL: this API may change without prior notice
+ *
+ * Get the number of tbl8s.
+ *
+ * @param lpm
+ *   LPM object handle
+ * @return
+ *   0 or positive on successfully getting the number of rules,
+ *   negative otherwise.
+ *   Possible error values include:
+ *   - EINVAL - invalid parameter passed to function
+ */
+__rte_experimental
+int
+rte_lpm6_get_num_tbl8s(const struct rte_lpm6 *lpm);
+
+/**
  * Create an LPM object.
  *
  * @param name

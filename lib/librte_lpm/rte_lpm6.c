@@ -293,6 +293,28 @@ rte_lpm6_rule_iterate(struct rte_lpm6_iterator_state *state,
 }
 
 /*
+ * Get the maximum number of rules.
+ */
+int
+rte_lpm6_get_max_rules(const struct rte_lpm6 *lpm)
+{
+	if (lpm == NULL)
+		return -EINVAL;
+	return lpm->max_rules;
+}
+
+/*
+ * Get the number of tbl8s.
+ */
+int
+rte_lpm6_get_num_tbl8s(const struct rte_lpm6 *lpm)
+{
+	if (lpm == NULL)
+		return -EINVAL;
+	return lpm->number_tbl8s;
+}
+
+/*
  * Allocates memory for LPM object
  */
 struct rte_lpm6 *
