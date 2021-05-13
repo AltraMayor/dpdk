@@ -1604,31 +1604,31 @@ Description: Data Plane Development Kit (librte_metrics runtime library)
  .
  This package contains the runtime libraries for librte_metrics.
 
-#Package: libgkrte-pmd-aesni-gcm19.08
-#Architecture: amd64
-#Multi-Arch: same
-#Pre-Depends: ${misc:Pre-Depends},
-#Depends: ${misc:Depends},
-#         ${shlibs:Depends},
-#Conflicts: libdpdk0, librte-pmd-aesni-gcm19.08
-#Description: Data Plane Development Kit (librte_pmd_aesni_gcm runtime library)
-# DPDK is a set of libraries for fast packet processing. Applications run
-# in user-space and communicate directly with dedicated network interfaces.
-# .
-# This package contains the runtime libraries for librte_pmd_aesni_gcm.
+Package: libgkrte-pmd-aesni-gcm19.08
+Architecture: amd64
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Conflicts: libdpdk0, librte-pmd-aesni-gcm19.08
+Description: Data Plane Development Kit (librte_pmd_aesni_gcm runtime library)
+ DPDK is a set of libraries for fast packet processing. Applications run
+ in user-space and communicate directly with dedicated network interfaces.
+ .
+ This package contains the runtime libraries for librte_pmd_aesni_gcm.
 
-#Package: libgkrte-pmd-aesni-mb19.08
-#Architecture: amd64
-#Multi-Arch: same
-#Pre-Depends: ${misc:Pre-Depends},
-#Depends: ${misc:Depends},
-#         ${shlibs:Depends},
-#Conflicts: libdpdk0, librte-pmd-aesni-mb19.08
-#Description: Data Plane Development Kit (librte_pmd_aesni_mb runtime library)
-# DPDK is a set of libraries for fast packet processing. Applications run
-# in user-space and communicate directly with dedicated network interfaces.
-# .
-# This package contains the runtime libraries for librte_pmd_aesni_mb.
+Package: libgkrte-pmd-aesni-mb19.08
+Architecture: amd64
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends},
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Conflicts: libdpdk0, librte-pmd-aesni-mb19.08
+Description: Data Plane Development Kit (librte_pmd_aesni_mb runtime library)
+ DPDK is a set of libraries for fast packet processing. Applications run
+ in user-space and communicate directly with dedicated network interfaces.
+ .
+ This package contains the runtime libraries for librte_pmd_aesni_mb.
 
 Package: libgkrte-pmd-ark19.08
 Architecture: amd64 arm64 armhf i386 ppc64el
